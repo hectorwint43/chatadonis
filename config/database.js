@@ -20,6 +20,31 @@ module.exports = {
 
   /*
   |--------------------------------------------------------------------------
+  | MongoDB
+  |--------------------------------------------------------------------------
+  |
+  | Here we define connection settings for MongoDB database.
+  |
+  */
+  mongodb: {
+  connectionString: Env.get('MONGO_CONNECTION_STRING', 'mongodb://localhost:27017/chat1'),
+    connection: {
+      host: Env.get('MONGO_HOST', 'localhost'),
+      port: Env.get('MONGO_PORT', 27017),
+      user: Env.get('MONGO_USER', 'admin'),
+      pass: Env.get('MONGO_PASSWORD', ''),
+      database: Env.get('MONGO_DATABASE', 'chat1'),
+      options: {
+        useNewUrlParser: true
+        // All options can be found at http://mongoosejs.com/docs/connections.html
+      }
+      // ,
+      // debug: false
+    }
+  },
+
+  /*
+  |--------------------------------------------------------------------------
   | Sqlite
   |--------------------------------------------------------------------------
   |

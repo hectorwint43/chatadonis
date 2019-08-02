@@ -8,7 +8,7 @@ class GrupoSchema extends Schema {
     this.create('grupos', (table) => {
       table.increments()
       table.string('nombregrupo', 50).notNullable()
-      table.string('usuario', 10).notNullable()
+      table.integer('creadorid').notNullable().references('id').inTable('users');
       table.timestamps()
     })
   }
